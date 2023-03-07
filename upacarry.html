@@ -1,89 +1,143 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <base href="https://github.com/rmiurmiu/upacarry/" target="_blank">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.>
     <title>Upacarry~エンジニア転職のための~</title>
-    <link rel="icon" type="image/x-icon" href="">
-    <link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    <meta name="description" content="Upacarry">
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="./images/1.png"> 
+    <!-- cssの読み込み？ -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
 
-    <style>
-        a:link, a:visited {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: black;
-            font-size: 16px;
-            font-weight: 500;
-            font-family: 'Noto Sans JP', sans-serif;
-            padding: 15px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        a:hover, a:active {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .header{
-            position: fixed;
-            width: 100%;
-            background-color: rgba(255, 255, 0, 0.3);
-            padding: 30px auto 26px auto;
-            text-align: center;
-            z-index: 999;
-        }
-
-        .reservation{
-            position:fixed;
-            width: 142px;
-            height: 142px;
-            border-radius: 50%;
-            background-color: #FCA60E;
-            text-align: center;
-            line-height: 142px;
-
-
-        }
-
-        .top{
-            background-image: url('../images/1.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            font-family: 'noto sans JP', sans-serif;
-            width: 100%;
-            height: 700px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            
-        }
-
-
-    </style>
 </head>
-<body>
+<body class="body">
+    <header class="header">
+        <!-- ハンバーガーメニュー部 -->
+        <div class="nav">
+                
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+                
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer_input" class="drawer_open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
 
-    <div class="header">   
-        <a href="https://www.google.com">Home</a>
-        <a href="https://www.google.com">履歴書作成</a>
-        <a href="https://www.google.com">キャリア相談</a>
-        <a href="https://www.google.com">転職実績</a>
-        <a href="https://www.google.com">取扱求人一覧</a>
-    </div>
+                <nav class="nav_content">
+                    <ul class="nav_list">
+                        <li class="menu"><a href="https://www.google.com">Home</a></li>
+                        <li class="menu"><a href="https://www.google.com">履歴書作成</a></li>
+                        <li class="menu"><a href="https://www.google.com">キャリア相談</a></li>
+                        <li class="menu"><a href="https://www.google.com">転職実績</a></li>
+                        <li class="menu"><a href="https://www.google.com">取扱求人一覧</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
 
     <div class="reservation">
-        <a href="https://wwww.google.com">予約する</a>
+        <a href="https://www.google.com" target="_blank"><b>予約する</b></a>
     </div>
 
-
     <section class="top">
-        <div style="margin: 296px auto 303px auto;">
-            <p style="font-family: Bahnschrift;"><b>Upa Carry</b></p>
+        <div class="top-block">
+            <p id="logo"><b>Upa Carry</b></p>
             <p>Upa carryは未経験中途・第二新卒に特化した転職エージェントです。</p>
         </div>
 
     </section>
 
+    <section class="job-offer">
+        <div>
+            <div class="section-title">
+                <p class="title-p">求人検索</p>
+            </div>
+            <div class="contents">
+                <p>3つのカテゴリー＋特別求人から希望の仕事を探します。</p>
+            </div>
+
+                <!-- 3つ両端揃え -->
+            <div class="box">
+                <div class="check" id="inex">
+                    <p class="title-check">未経験求人</p>
+                    <p>Upa jobはIT企業に特化した<br>転職エージェントです。</p>
+                    <div class="check-button">
+                        <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                    </div>
+                </div>
+
+                <div class="check" id="jobtype">
+                    <p class="title-check">職種別</p>
+                    <p>Upa jobはIT企業に特化した<br>転職エージェントです。</p>
+                    <div class="check-button">
+                        <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                    </div>
+                </div>
+
+                <div class="check" id="lang">
+                    <p class="title-check">言語別</p>
+                    <p>Upa jobはIT企業に特化した<br>転職エージェントです。</p>
+                    <div class="check-button">
+                        <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-offer">
+        <div>
+            <div class="section-title">
+                <p class="title-p">特別求人</p>
+            </div>
+            <div class="contents">
+                <p>経験2年目から可能、経験浅フリーランス案件：日給3万～、交通費・宿泊費完全支給の研修講師案件。</p>
+                <div class="check-button">
+                    <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-offer"  id="sec-sup">
+        <div class="section-title" id="supp">
+            <p class="title-p">SUPPORT</p>
+        </div>
+        <div class="split-2">
+            <div class="center-div" id="left">
+                <p class="title-p" id="split">履歴書作成</p>
+                <p class="contents">Upa jobはIT企業に特化した転職エージェントです。<br>企業に特化した転職エージェントです。</p>
+                <div class="check-button">
+                    <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                </div>
+            </div>
+            <div class="center-div">
+                <p class="title-p" id="split">キャリア相談</p>
+                <p class="contents">Upa jobはIT企業に特化した転職エージェントです。<br>企業に特化した転職エージェントです。</p>
+                <div class="check-button">
+                    <a class="check-a" href="https://www.google.com" target="_blank">check</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="div-logo">
+            
+
+        </div>
+
+    </section>
 
 </body>
 
