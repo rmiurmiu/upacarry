@@ -92,7 +92,7 @@ a{
 }    
 
 .job-offer{
-    margin: 104px auto 36px auto;
+    padding: 104px auto 0 auto;
 }
 
 .section-title{         
@@ -211,4 +211,112 @@ a{
 #split{
     margin: 18px 0;
     padding: 0;
+}
+
+.logo{
+    padding: 104px 0 140px 0 ;
+}
+
+.div-logo{
+}
+
+.above-images{
+    padding: 0 210px 0px 180px;
+    justify-content: center;
+    display: flex;
+}
+
+.below-images{
+    padding: 20px 180px 0 200px;
+    justify-content: center;
+    display: flex;
+}
+
+div.pic img{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+    margin: 0 0 0 20px;
+}
+
+#or-title{
+    background-image: url('../images/6.png');
+    color: white;
+}
+
+#or-section{
+    background-color: #FCA60E;
+    padding: 62px;
+}
+
+#white-contents{
+    color: white;
+    margin: 29px 0 50px;
+}
+
+.div-circle{
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    width: 800px;    
+    margin: 0 auto;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    width: 207px;
+    height: 207px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.internal-circle{
+    width: 207px;
+    height: 207px;
+    display: flex;
+    flex-flow: column;
+}
+
+.up-circle{
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-end;
+    width: 207px;
+    margin: 0 auto;
+}
+
+.div-step{
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    height: 73px;
+    width: 100%;
+    margin: 0 0 0 auto;
+}
+
+.step{
+    display: flex;
+    display: flex;
+    align-items: flex-end;
+}
+
+.num-step{
+    font-size: 79px;
+    height: 95px;
+    }
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 24px;
+    border-color: transparent transparent transparent #000000;
 }
