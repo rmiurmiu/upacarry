@@ -86,13 +86,13 @@ a{
     vertical-align: middle;
 }
 
-#logo{
+.logo{
     font-family: Bahnschrift; 
     font-size: 66px;
 }    
 
 .job-offer{
-    padding: 104px auto 0 auto;
+    margin: 104px auto;
 }
 
 .section-title{         
@@ -179,6 +179,10 @@ a{
     background-image: url('../images/5.png');
 }
 
+#special-rec{
+    padding: 43px 0 141px 0;
+}
+
 #supp{
     background-image: url('../images/2.png');
 }
@@ -188,7 +192,6 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin: 141px auto 36px auto;
     padding: 31px 0 80px 0;
     height: auto;
 }
@@ -213,8 +216,8 @@ a{
     padding: 0;
 }
 
-.logo{
-    padding: 104px 0 140px 0 ;
+#logo{
+    padding: 140px 0 140px 0 ;
 }
 
 .div-logo{
@@ -247,7 +250,7 @@ div.pic img{
 
 #or-section{
     background-color: #FCA60E;
-    padding: 62px;
+    padding: 62px 20px 84px 20px;
 }
 
 #white-contents{
@@ -320,3 +323,197 @@ div.pic img{
     border-width: 14px 0 14px 24px;
     border-color: transparent transparent transparent #000000;
 }
+
+#seminer{
+    padding: 140px 0px 147px 0px;
+}
+
+.sem-block{
+    padding: 44px 0 0 0;
+}
+
+.sem-info{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px 0 10px 0 ;
+}
+
+.sem-pic{
+    width: 38%;
+    display: block;
+    text-align: right;
+}
+
+div.sem-pic img{
+    width: 253px;
+    height: 141px;
+}
+
+.sem-info-text{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 0 0 55px;
+    width: 62%;
+}
+
+.sem-discription{
+    display: flex;
+    padding: 13px 0 0 0;
+}
+
+.or-line{
+    width: 7px;
+    height: 40px;
+    background-color: #FCA60E;
+}
+
+.seminer-p{
+    padding: 0;
+}
+
+.sem-para{
+    padding: 0 0 0 15px;
+}
+
+.date{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.sem-more-details{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.achievement{
+    padding: 0 0 140px 0;
+}
+
+.achievement-tile{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    padding: 53px;
+  }
+
+.achievement-tile .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid{
+    text-align: center;
+    align-items: center;
+    height: 262px;
+    width: 207px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px 0 0 0;
+}
+
+.circle-img{
+    background-color: #CECECE;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+div.circle-img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.name{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 0 15px 0;
+}
+
+.achievement-description{
+}
+
+.achievement-tile .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.achievement-tile .pagination a {
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+  
+
+.achievement-tile .pagination a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination label {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination input[type=radio] {
+    display: none;
+  }
+  
+  .pagination input[type=radio]:checked + label {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* hide all items except the first page */
+  .grid-item:nth-child(n+7) {
+    display: none;
+  }
+  
+  /* show the second page */
+  #page2:checked ~ .grid-container .grid-item:nth-child(n+7):nth-child(-n+6) {
+    display: grid;
+  }
+  
+  /* show the third page */
+  #page3:checked ~ .grid-container .grid-item:nth-child(n+13):nth-child(-n+6) {
+    display: grid;
+  }
+  
