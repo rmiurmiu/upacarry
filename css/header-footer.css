@@ -1,0 +1,231 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+@font-face {
+    font-family: '851';
+    src: url('/font/851Gkktt_005.ttf') format('truetype');
+}
+
+html{
+    font-size: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    font-family: "Noto Sans Japanese";
+}
+
+body,p,ul,td,th{
+    margin: inherit;
+    padding: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+    }
+
+@media screen and (max-width: 900px) {
+/* 767px以下の画面幅に適用されるスタイル /
+/ メニューの表示・非表示を切り替えるチェックボックス */
+.drawer_hidden {
+display: block;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+display: flex;
+}
+
+.drawer_hidden {
+    display: none;
+    }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    background: #fff;
+    position: relative;
+}
+  
+.logo {
+    font-size: 24px;
+}
+  
+/* ここから下がハンバーガーメニューに関するCSS */
+  
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 999;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+  
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 26px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.3s;
+    position: absolute;
+    cursor: pointer;
+}
+  
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+    bottom: 8px;
+}
+  
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+    top: 8px;
+}
+  
+/* アイコンがクリックされたら上下の線を消す */
+#drawer_input:checked ~ .drawer_open span:before,
+#drawer_input:checked ~ .drawer_open span:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+    
+/* メニューのデザイン*/
+.nav_content {
+    width: 100%;
+    height: 330px;
+    position: fixed;
+    bottom: 100%;
+    left: 0%; /* メニューを画面の外に飛ばす */
+    z-index: 100;
+    background: white;
+    transition: .5s;
+    text-align: center;
+    padding-top: 30px;
+}
+  
+/* メニュー黒ポチを消す */
+.nav_list {
+    list-style: none;
+    padding: 0;
+}
+  
+.nav_item a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav_item{
+    margin-top: 20px;
+}
+
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    top: 0;/* メニューを画面に入れる */
+}
+}
+
+
+@media screen and (min-width: 901px) {
+/* 901px以上の画面幅に適用されるスタイル /
+/ チェックボックスを非表示にする */
+.header{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0 26px 0;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav {
+   text-decoration: none;
+}
+
+.nav_content {
+   justify-content: space-between;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+}
+
+.nav_item {
+   margin-right: 30px;
+}
+
+.nav_item a{
+    color: #333;
+}
+}
+
+.footer{
+    /* display: flex;        */
+    padding: 63px 0 80px 0;
+    background-image: url('/images/9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.fot-pare{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    padding: 0 0 0 190px;
+    display: flex;
+    flex-flow: column;
+    /* gap: 40px; */
+    width: 253px;
+}
+
+.link a{
+    margin-bottom: 42px;
+    color: #000;
+    cursor : pointer;
+}
+
+.comp-sign{
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    padding: 0;
+}
+
+.policy{
+    padding: 0 190px;
+    text-align: left;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#privacy{
+    padding: 2px 0 2px 50px;
+    font-weight: 400;
+    color: #000;
+}
+
+#upacarry{
+    padding: 0;
+    font-weight: 700;
+    line-height: 66px;
+    font-size: 66px;
+    margin-top: 100px;
+    text-align: center;
+}
