@@ -21,6 +21,10 @@ a{
     text-decoration: none;
 }
 
+.body{
+    width: 100%;
+}
+
 /* チェックボックスを非表示にする */
 .drawer_hidden {
     display: none;
@@ -30,17 +34,8 @@ a{
 /* 767px以下の画面幅に適用されるスタイル /
 / メニューの表示・非表示を切り替えるチェックボックス */
 .drawer_hidden {
-display: block;
+display: none;
 }
-
-/* ハンバーガーアイコンの設置スペース */
-.drawer_open {
-display: flex;
-}
-
-.drawer_hidden {
-    display: none;
-    }
 
 .header {
     display: flex;
@@ -51,17 +46,13 @@ display: flex;
     position: relative;
 }
   
-.logo {
-    font-size: 24px;
-}
-  
 /* ここから下がハンバーガーメニューに関するCSS */
-  
 /* ハンバーガーアイコンの設置スペース */
 .drawer_open {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
     position: absolute;
     right: 25px;
     top: 25px;
@@ -172,9 +163,90 @@ display: flex;
 }
 }
 
-.footer{
-    /* display: flex;        */
-    padding: 63px 0 80px 0;
+@media screen and (min-width: 901px){
+
+
+#mail-form{
+    height: 350px;
+    background: #FCA60E 0% 0% no-repeat padding-box;
+    align-items: center;
+    display: flex;
+    /* padding: 0 15% 0 190px; */
+    margin: 0 auto 0 auto;
+    justify-content: center;
+}
+
+.form{
+    max-width: 80%;
+    display: flex;
+}
+
+.left-form{
+    text-align: right;
+}   
+
+.left-form p{
+    text-align: left;
+}
+
+.right-form{
+    padding: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    padding-right: 50px;
+}
+
+.input-group button {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    height: 100%;
+    width: 50px;
+}
+
+input[type="email"] {
+    width: 30vw;
+    height: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 8px 8px 10px #00000029;
+    border-radius: 20px;
+    opacity: 1;
+    border: white;
+  }
+
+input[type="email"]::placeholder {
+    color: #949494;
+    font-size: 18px;
+    padding: 0 0 0 25px;
+}
+  
+button[type="submit"] {
+    border-radius: 15px;
+    opacity: 1;
+    background-color: #000;
+    color: white;
+    font-size: 15px;
+    width: 80px;
+    height: 30px;
+}
+  
+button[type="submit"]:hover {
+    border-radius: 15px;
+    opacity: 1;
+}
+
+/* フッター要素 */
+.footer-sec{
+    padding: 63px 190px 80px 190px;
     background-image: url('/images/9.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -187,11 +259,10 @@ display: flex;
 }
 
 .link{
-    padding: 0 0 0 190px;
     display: flex;
     flex-flow: column;
-    /* gap: 40px; */
-    width: 253px;
+    max-width: 286px;
+    text-align: right;
 }
 
 .link a{
@@ -209,14 +280,13 @@ display: flex;
 }
 
 .policy{
-    padding: 0 190px;
-    text-align: left;
+    max-width: 470px;
+    text-align: center;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 #privacy{
-    padding: 2px 0 2px 50px;
     font-weight: 400;
     color: #000;
 }
@@ -228,4 +298,5 @@ display: flex;
     font-size: 66px;
     margin-top: 100px;
     text-align: center;
+}
 }
