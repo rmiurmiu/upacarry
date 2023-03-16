@@ -25,16 +25,14 @@ a{
     width: 100%;
 }
 
-@media screen and (min-width: 901px){
-
+/* PC版 */
 #mail-form{
     height: 350px;
     background: #FCA60E 0% 0% no-repeat padding-box;
     align-items: center;
     display: flex;
-    /* padding: 0 15% 0 190px; */
-    margin: 0 auto 0 auto;
     justify-content: center;
+    color: #FFFFFF;
 }
 
 .form{
@@ -104,6 +102,177 @@ button[type="submit"]:hover {
     border-radius: 15px;
     opacity: 1;
 }
+
+/* フッター要素 */
+.footer-sec{
+    padding: 63px 190px 80px 190px;
+    background-image: url('/images/9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.fot-pare{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    display: flex;
+    flex-flow: column;
+    max-width: 286px;
+    text-align: right;
+}
+
+.link a{
+    margin-bottom: 42px;
+    color: #000;
+    cursor : pointer;
+}
+
+.comp-sign{
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    padding: 0;
+}
+
+.policy{
+    max-width: 470px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#privacy{
+    font-weight: 400;
+    color: #000;
+}
+
+#upacarry{
+    padding: 0;
+    font-weight: 700;
+    line-height: 66px;
+    font-size: 66px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width:991px){
+/* footer部分 */
+.footer-sec{
+    padding: 63px 190px 80px 190px;
+    background-image: url('/images/9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.fot-pare{
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    display: flex;
+    flex-flow: column;
+    max-width: 286px;
+    text-align: right;
+}
+
+.link a{
+    margin-bottom: 42px;
+    color: #000;
+    cursor : pointer;
+}
+
+.comp-sign{
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    padding: 0;
+}
+
+.policy{
+    max-width: 470px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#privacy{
+    font-weight: 400;
+    color: #000;
+}
+
+#upacarry{
+    padding: 0;
+    font-weight: 700;
+    line-height: 66px;
+    font-size: 66px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+}
+
+/* SP版 */
+@media screen and (max-width: 767px){
+
+#mail-form{
+    height: auto;
+    font-size: 18px;
+}
+
+.form{
+    max-width: 80%;
+    display: flex;
+    flex-flow: column;
+    padding: 100px 50px;
+}
+
+.left-form{
+    text-align: left;
+    width: 100%;
+    padding-bottom: 25px;
+}   
+
+.above-text{
+    font-size: 18px; padding-bottom: 25px;
+}
+
+.under-text{
+    padding: 0; font-size: 16px;
+}
+
+.right-form{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.input-group button {
+    position: absolute;
+    top: 2.5px;
+    right: 3px;
+}
+
+input[type="email"] {
+    width: 290px;
+    height: 35px;
+}
+
+button[type="submit"] {
+    font-size: 14px;
+    width: 60px;
+    height: 30px;
+}
+  
 
 /* フッター要素 */
 .footer-sec{
