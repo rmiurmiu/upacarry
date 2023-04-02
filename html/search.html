@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarrierDoctor~エンジニア転職のための~</title>
+    <meta name="description" content="CarrierDoctor">
+    
+    <!-- ファビコン設定 -->
+    <link rel="icon" href="./images/top/1.png"> 
+    
+    <!-- cssの読み込み -->
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
+    <script src="/js/search.js"></script>
+</head>
+<body>
+    <main>
+        <div class="archives">
+            <p class="search-title">投稿アーカイブ</p>
+            <div class="search-year">
+                <label for="year"><b>投稿年で絞り込む</b></label><br>
+                <select id="year">
+                    <option value="all">-</option>
+                    <option value="2023">2023年</option>
+                    <option value="2022">2022年</option>
+                    <option value="2021">2021年</option>
+                </select>
+                <button class="search-button">check</button>
+            </div>
+
+            <div class="border"></div>
+            
+            <div class="search-keyword">
+                <label for="keyword"><b>キーワードで<br>絞り込む</b></label>
+                <input type="text" id="keyword" placeholder="">
+    
+                <button class="search-button" onclick="filter()">check</button>
+            </div>
+
+        </div>
+        <!-- ページ移動して、フィルタリング
+        ボタンの機能の中身はまだ実装していないJsで組む -->
+        <div class="category">
+            <p class="search-title">Category</p>
+            <div class="search-category">
+                <div id="filter-buttons">
+                    <button id="beginner" onclick="window.location.href='https://www.google.com/'">未経験求人 ➡</button>
+                    <button id="job-type" onclick="window.location.href='https://www.google.com/'">　職種別　 ➡</button>
+                    <button id="language" onclick="window.location.href='https://www.google.com/'">　言語別　 ➡</button>
+                </div>                  
+            </div>
+        </div>
+        
+        <div class="feature-company">
+        </div>
+
+        <div class="special-article">
+        </div>
+    </main>
+</body>
+</html>

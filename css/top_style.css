@@ -1,0 +1,1737 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+
+/* 共通部分 */
+html{
+    font-size: 100%;
+    scroll-behavior: smooth;
+    font-family: "Noto Sans Japanese";
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body,p,ul,td,th{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 100%;
+}
+
+/* top-header部分 */
+.drawer_hidden {
+    display: none;
+}
+
+.top_header{
+    display: flex;
+    width: 100%;
+    height: 0;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav_content {
+   justify-content: space-between;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+}
+
+.nav_item {
+   margin-right: 30px;
+}
+
+.nav_item a{
+    color: #333;
+    font-weight: 500;
+}
+
+.reservation a{
+    position:fixed;
+    width: 142px; height: 142px; z-index: 999;
+    border-radius: 50%;
+    background-color: #FCA60E;
+    color: white;
+    text-align: center;
+    line-height: 142px;
+    text-decoration: none;
+    bottom: 0; right: 0;
+    margin: 0 14% 5% 0;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+/* 900px以下の画面幅に適用されるスタイル */
+@media screen and (max-width: 900px) {
+.reservation a{
+    width: 100px; height: 100px;
+    line-height: 100px;
+    margin: 0 14% 20% 0;
+    position: fixed;
+}
+
+.top_header{
+    width: 100%;
+    align-items: center;
+    padding: 0px;
+    background: #fff;
+}
+   
+    /* ここから下がハンバーガーメニューに関するCSS */
+    /* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    z-index: 999;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+    
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 26px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.3s;
+    position: absolute;
+    cursor: pointer;
+}
+    
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+    bottom: 8px;
+}
+    
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+    top: 8px;
+}
+    
+/* アイコンがクリックされたら上下の線を消す */
+#drawer_input:checked ~ .drawer_open span:before,
+#drawer_input:checked ~ .drawer_open span:after {
+top: 50%;
+transform: translateY(-50%);
+}
+        
+/* メニューのデザイン*/
+.nav_content {
+    width: 100%;
+    height: 330px;
+    position: fixed;
+    left: 0%; /* メニューを画面の外に飛ばす */
+    z-index: 100;
+    background: white;
+    transition: .5s;
+    text-align: center;
+    bottom: 100%;
+}
+    
+/* メニュー黒ポチを消す */
+.nav_list {
+    width: 100%;
+    padding: 0;
+    flex-flow: column;
+}
+    
+.nav_item a {
+    color: black;
+    text-decoration: none;
+    padding-top: 20px;
+}
+
+.nav_item{
+    margin: 20px 0 0 0 ;
+}
+
+#home{
+    padding-top: 52px;
+    margin-top: 0;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+    top: 0; /* メニューを画面に入れる */
+}
+}
+
+/* 他ページheader部分 */
+.header{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.div-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.CarrierDoctor{
+    margin: 29px 0 0 102px;
+    display: flex;
+    width: 170.35px;
+    height: 20.51px;
+    background-image: url('../images/article-top/article5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.nav{
+    margin-right: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 900px以下の画面幅に適用されるスタイル */
+@media screen and (max-width: 900px) {
+.header{
+    width: 100%;
+    padding: 0px;
+    position: absolute;
+    align-items: center;
+    height: 0;
+}
+ 
+.nav{
+    padding-right: 0;
+    width: 0;
+}
+}
+
+
+/* titleSP版対応 */
+@media screen and (max-width: 768px) {
+.CarrierDoctor{
+    margin: 25px 0 0 30px;
+    width: 102px;
+    height: 12.28px;
+}
+}
+
+
+
+/* footer-form部分 */
+/* PC版 */
+#mail-form{
+    height: 350px;
+    background: #FCA60E 0% 0% no-repeat padding-box;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.form{
+    max-width: 80%;
+    display: flex;
+}
+
+.left-form{
+    text-align: right;
+}   
+
+.above-text{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.under-text{
+    max-width: 400px;
+}
+
+.left-form p{
+    text-align: left;
+}
+
+.right-form{
+    padding: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    padding-right: 50px;
+}
+
+.input-group button {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    height: 100%;
+    width: 50px;
+}
+
+input[type="email"] {
+    width: 30vw;
+    height: 40px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 8px 8px 10px #00000029;
+    border-radius: 20px;
+    border: white;
+  }
+
+input[type="email"]::placeholder {
+    color: #949494;
+    font-size: 18px;
+    padding: 0 0 0 25px;
+    z-index: 0;
+}
+  
+button[type="submit"] {
+    border-radius: 15px;
+    background-color: #000;
+    color: white;
+    font-size: 15px;
+    width: 80px;
+    height: 30px;
+}
+  
+button[type="submit"]:hover {
+    border-radius: 15px;
+}
+
+/* フッター要素 */
+.footer-sec{
+    padding: 65px 190px 0;
+    background-image: url('../images/top/9.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-weight: 400;
+}
+
+.fot-pare{
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    padding-bottom: 27px;
+    margin: 0 auto;
+}
+
+.link{
+    display: flex;
+    flex-flow: column;
+    max-width: 286px;
+    height: 189px;
+    justify-content: space-between;
+}
+
+.link a{
+    color: #000;
+    cursor : pointer;
+}
+
+.comp-sign{
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 86px;
+}
+
+.policy{
+    text-align: right;
+    display: flex;
+    flex-flow: column;
+}
+
+div.policy img{
+    width: 272.56px;
+    height: 32.81px;
+    margin-top: 65px;
+}
+
+#privacy{
+    color: #000;
+    text-align: center;
+}
+
+/* tablet */
+@media screen and (min-width: 767px) and (max-width:1000px){
+/* footer部分 */
+.footer-sec{
+    padding: 65px 10% 0;
+}
+
+#upacarry{
+    padding: 0;
+    line-height: 7vw;
+    font-size: 7vw;
+}
+}
+
+/* SP版 */
+@media screen and (max-width: 768px){
+
+#mail-form{
+    height: auto;
+    font-size: 18px;
+}
+
+.form{
+    max-width: 80%;
+    display: flex;
+    flex-flow: column;
+    padding: 100px 10%;
+}
+
+.left-form{
+    text-align: left;
+    width: 100%;
+    padding-bottom: 25px;
+}   
+
+.above-text{
+    font-size: 18px; padding-bottom: 25px;
+}
+
+.under-text{
+    padding: 0; font-size: 16px;
+}
+
+.right-form{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group button {
+    position: absolute;
+    top: 2.5px;
+    right: 3px;
+}
+
+input[type="email"] {
+    width: 200px;
+    height: 35px;
+}
+
+button[type="submit"] {
+    font-size: 14px;
+    width: 60px;
+    height: 30px;
+}
+  
+/* フッター要素 */
+.footer-sec{
+    padding: 100px 0px 0px;
+    background-image: url('/images/top/SP_9.png');
+    height: auto;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+}
+
+.fot-pare{
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.link a{
+    margin-bottom: 25px;
+}
+
+.policy{
+    text-align: right;
+    display: flex;
+    flex-flow: column;
+}
+
+div.policy img{
+    width: 146.02px;
+    height: 17.58px;
+    margin-top: 0px;
+}
+
+#privacy{
+    color: #000;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.comp-sign{
+    padding-top: 27px;
+}
+
+}
+
+
+.section-title{         
+    background-image: url('../images/top/7.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: 0 auto ; 
+    width: 206.83px;
+    height: 67.42px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    align-items: center;
+}
+
+.special-padding{
+    margin-bottom: 26px;
+}
+
+/* top部分 */
+.top{
+    background-image: url('../images/top/1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 700px;
+    text-align: center;
+    text-decoration: none;
+    display: table;
+}
+
+.top-block{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#logo{
+    margin: 0 auto 25px;
+    width: 321.23px;
+    height: 38.67px;
+    background-image: url('../images/top/Top-logo.png');
+}
+
+/* 記事紹介部分 */
+.new-article{
+    padding: 182px 0 127px;
+    margin: 0 auto;
+}
+
+.div-ariticle{
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.block-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+    margin: 0 auto;
+    padding: 47px 0 0 ;
+}
+
+.article-link{
+    width: 369px;
+    height: 303px;
+    justify-content: space-between;
+}
+
+.article{
+    width: 369px;
+    height: 303px;
+    box-shadow: 5px 5px 8px #00000029;
+    border-radius: 5px;
+}
+
+div.article img{
+    width: 369px;
+    height: 177.95px;
+}
+
+
+@media screen and (min-width: 768px) {
+.date-sp{
+    display: none;
+}}
+
+.sem-block{
+    padding: 44px 0 0;
+}
+
+.sem-info-text{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 7px 23px 0 26px;
+}
+
+.sem-discription{
+    display: flex;
+    justify-content: center;
+}
+
+.or-line{
+    width: 7px;
+    height: 66px;
+    background-color: #FCA60E;
+}
+
+.seminer-p{
+    padding: 7.5px 0 0 26px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.date-pc{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0;
+}
+
+.sem-para{
+    padding-left: 15px;
+}
+
+.sem-more-details{
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+.title-p{
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 12px;
+}
+
+
+/* 求人検索section */
+.contents{
+    text-align: center;
+    margin: 0 auto;
+}
+
+div.contents p{
+    padding: 0 0 40px 0;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* 3つを両端ぞろえ */
+.box{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+}
+
+/* 1つずつ×3つ */
+.check{
+    width: 280px;
+    height: 289px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.check-p{
+    padding-bottom: 40px;
+}
+
+/* 3つの各タイトル */
+.title-check{
+    display: block;
+    padding: 24.5px 0 72px 0;
+    font-size: 20px;
+}
+
+.check-button a{
+    display: table;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: #FCA60E;
+    background-position: center center;
+    border-radius: 15px;
+    margin: 0 auto 0 auto;
+    font-size: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 6px #00000029;
+}
+
+#inex{
+    background-image: url('../images/top/3.png');
+}
+#jobtype{
+    background-image: url('../images//top/4.png');
+}
+#lang{
+    background-image: url('../images/top/5.png');
+}
+
+
+/* 特別求人部分 */
+.special-rec{
+    padding: 187px 0 141px 0;
+}
+
+.special-rec-p{
+    text-align: center;
+    margin: 0 auto;
+    padding: 26px 0 40px;
+}
+
+div.special-rec-p p{
+    justify-content: center;
+    font-size: 18px;
+}
+
+
+/* support部 */
+#supp{
+    background-image: url('../images/top/2.png');
+}
+
+.sec-sup{
+    background-image: url('../images/top/8.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 31px 0 80px 0;
+    height: auto;
+}
+
+.split-2{
+    padding-top: 55px;
+    justify-content: center;
+    display: flex;
+}
+
+.center-div{
+    padding-left: 68px;
+    padding-right: 68px;
+    text-align: center;
+}
+
+.verttical-line{
+    border-right: 1px solid black;
+}
+
+.sup-text{
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#split{
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+.sup-btn{
+    margin-top: 20px;
+}
+
+
+/* 企業ロゴ */
+.logo{
+    padding: 140px 0 140px 0 ;
+}
+
+.above-images{
+    min-width: 768px;
+    max-width: 60%;
+    margin: 0 auto 0 auto;
+    justify-content: space-between;
+    display: flex;
+}
+
+.below-images{
+    min-width: 768px;
+    max-width: 60%;
+    margin: 20px auto 0 auto;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 20px;
+}
+
+div.pic img{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* FLOW部分 */
+#or-title{
+    background-image: url('../images/top/6.png');
+    color: white;
+}
+
+.or-section{
+    background-color: #FCA60E;
+    padding: 62px 20px 84px 20px;
+}
+
+#white-contents{
+    color: white;
+    margin: 29px 0 50px;
+    padding: 0%;
+    text-align: center;
+}
+
+.div-circle{
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    width: 800px;    
+    margin: 0 auto;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    width: 207px;
+    height: 207px;
+    display: flex;
+}
+
+.internal-circle{
+    width: 207px;
+    height: 207px;
+    display: flex;
+    flex-flow: column;
+}
+
+.up-circle{
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.div-step{
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    height: 73px;
+    margin: 0 0 0 auto;
+}
+
+.step{
+    display: flex;
+    display: flex;
+    align-items: flex-end;
+}
+
+.num-step{
+    font-size: 79px;
+    height: 95px;
+    }
+/* http://apps.eky.hk/css-triangle-generator/ja */
+.triangle{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 24px;
+    border-color: transparent transparent transparent #000000;
+}
+
+/* 実績部分 */
+.achievement{
+    padding: 147px 0 140px 0;
+}
+
+.achievement-tile{
+    padding-top: 53px;
+}
+
+.achievement-tile .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 207px);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.achievement-tile .list .grid {
+    text-align: center;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+}
+
+.list li{
+    padding: 0;
+    margin: 0;
+}
+
+.grid{
+    text-align: center;
+    align-items: center;
+    height: 262px;
+    width: 207px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+}
+
+.circle-img{
+    background-color: #CECECE;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+div.circle-img img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.name{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 0 15px 0;
+}
+
+.achievement-description{
+    padding-top: 0;
+}
+
+.achievement-tile .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.achievement-tile .pagination a {
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+  
+
+.achievement-tile .pagination a:hover {
+    background-color: #ddd;
+}
+
+
+/* tablet対応*/
+@media screen and (min-width: 768px) and (max-width: 842px) {
+/* 求人検索部分 */
+.box{
+    gap: 20px;
+}
+
+/* FLOW部分 */
+.block-article{
+    width: 96%;
+    margin: 0% auto;
+}
+
+.div-circle{
+    font-size: 18px;
+    width: 100%;
+    font-weight: 700;
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.circle{
+    border-radius: 50%;
+    background-color: white;
+    width: 20vw;
+    height: 20vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}}
+
+
+/* tablet対応  採用実績部分*/
+@media screen and (min-width: 768px) and (max-width: 925px){
+.top{
+    background-image: url('../images/top/SP_1.png');
+    background-size: cover;
+    background-position: bottom center ;
+}
+
+.grid{
+    width: 20vw;
+}
+
+.achievement-tile .list {
+    grid-template-columns: repeat(4, 180px);
+    width: 790px;
+}
+
+.achievement-tile{
+    width: 790px;
+    margin: 0 auto 0;
+}
+}
+
+/* PC版で非表示部分 */
+@media screen and (min-width: 769px) {
+/* logoのSP版非表示に */
+.div-logo-sp{
+    display: none;
+}
+}
+
+
+/* TOPSP版対応 */
+@media screen and (max-width: 768px) {
+.section-title{         
+    width: 179px;
+    height: 63.3px;
+    font-weight: 700;
+    font-size: 18px;
+}
+    
+.title-p{
+    padding-bottom: 20px;
+}
+
+/* top部分SP */
+.top{
+    height: 800px;
+    background-image: url('../images/top/SP_1.png');
+}
+
+#logo{
+    font-size: 40px;
+}
+
+/* 記事部分SP */
+.new-article{
+    padding: 90px 0;
+}
+
+.div-ariticle{
+    padding-top: 40px;
+}
+
+.block-article{
+    flex-flow: column;
+    width: 100%;
+    padding: 0;
+}
+
+.article-link{
+    width: 290px;
+    height: 130px;
+    margin-bottom: 25px;
+}
+
+div.article img{
+    width: 103.04px;
+    height: 57px;
+}
+
+.article{
+    width: 290px;
+    height: 130px;
+}
+
+.img-seminertitle{
+    display: flex;
+}
+
+.seminer-p{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+}
+
+div.img-seminertitle div{
+    padding-left: 15px;
+    display: flex;
+    flex-flow: column;
+    height: auto;
+    justify-content: center;
+}
+
+.date-sp{
+    font-size: 14px;
+}
+
+.date-pc{
+    display: none;
+}
+
+.sem-more-details{
+    font-size: 14px;
+    width: 244px;
+}
+
+.sem-info-text{
+    padding: 10px 0 0 15px;
+    display: flex;
+    flex-flow: column;    
+    justify-content: center;
+}
+
+.or-line{
+    height: 40px;
+}
+
+.sem-para{
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+/* 求人検索部分SP */
+.contents{
+    padding: 40px 0 60px 0;
+}
+
+div.contents p{
+    width: 290px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* 3つを縦揃え */
+.box{
+    align-items: center;
+    flex-flow: column;
+    gap: 50px;
+}
+
+.special-padding{
+    margin-bottom: 0px;
+}
+
+/* 特別求人部SP */
+.special-rec{
+    padding: 148px 0 120px;
+}
+
+.special-rec-p{
+    padding-bottom: 40px;
+    width: 70%;
+    padding-top: 40px;
+}
+
+/* support-SP */
+.sec-sup{
+    background-image: url('../images/top/SP_8.png');
+    padding: 100px 0 30px 0;
+}
+
+.split-2{
+    padding: 0;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.center-div{
+    padding: 82.3px 50px;
+    text-align: center;
+}
+
+.sup-text{
+    font-size: 15px;
+}
+
+.verttical-line{
+    width: 100px;
+    height: 1px;
+    border-right: none;
+    border-bottom:1px solid #000;
+    margin: 0 auto;
+}
+
+#split{
+    margin: 0 0 18px ;
+    padding: 0;
+    font-size: 18px;
+}
+
+/* 企業ロゴSP */
+.logo{
+    padding: 90px 0 90px 0 ;
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.div-logo-pc{
+    display: none;
+}
+
+.div-logo-sp{
+    display: block;
+}
+
+.above-images{
+    min-width: 80%;
+    margin: 0 5%;
+    justify-content: space-between;
+}
+
+.below-images{
+    min-width: 80%;
+    margin: 13px 0 0 0;
+    justify-content: space-between;
+    display: flex;
+    padding-left: 25px;
+}
+
+div.pic img{
+    width: 50px;
+    height: 50px;
+    margin-right: 2vw;
+}
+
+/* FLOWSP */
+.or-section{
+    padding: 100px 20px 120px 20px;
+}
+
+#white-contents{
+    margin: 40px auto 70px;
+    width: 290px;
+}
+
+.div-circle{
+    flex-flow: column;
+    align-items: space-between;
+    width: 100%;
+    height: 781px;
+}
+
+/* http://apps.eky.hk/css-triangle-generator/ja */
+.triangle{
+    border-width: 24px 14px 0 14px;
+    border-color: #000000 transparent transparent transparent;    
+}
+
+/* 実績SP */
+.achievement{
+    padding: 118px 0 145px 0;
+    font-size: 14px;
+}
+
+.achievement-tile{
+    padding-top: 86px;
+  }
+
+.achievement-tile .list {
+    grid-template-columns: repeat(2, 135px);
+}
+
+.grid{
+    height: 170px;
+    width: 135px;
+}
+
+.circle-img{
+    width: 65px;
+    height: 65px;
+}
+
+div.circle-img img{
+    width: 65px;
+    height: 65px;
+}
+
+.name{
+    font-size: 14px;
+    padding: 5px 0;
+}
+}
+
+
+/* 他ページ共通 */
+.page_top{
+    height: 280px;
+    background-image: url('/images/article-top/article4.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.page_title{
+    margin-bottom: 85px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 900px) {
+.page_top{
+    height: 120px;
+    background-image: url('../images/article-top/sp-article4.png');
+}
+
+.page_title{
+    margin: 71px 0 25px;
+    font-size: 16px;
+    font-weight: 700;
+}
+}
+
+
+
+/* article_top_css */
+
+#article-main{
+    display: flex;
+    margin: 0 auto;
+    max-width: 920px;
+    justify-content: center;
+    padding-bottom: 180px;
+    padding-top: 120px;
+}
+
+.article-grid{
+    display: flex;
+    flex-flow: column;
+}
+
+.article-link-div{
+    width: 309.57px;
+    height: 354.9px;
+}
+
+div.img-seminertitle img{
+    width: 309.57px;
+}
+
+.sem-discription-article{
+    height: 94.41px;
+    border-left: #FCA60E 7px solid;
+}
+
+.row-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 640px;
+    margin: 0 auto;
+    padding: 50px 0 0 ;
+}
+
+.row-top{
+    padding-top: 0;
+}
+
+.article-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.article-link-div{
+    width: 309.57px;
+    height: 354.9px;
+}
+
+.search{
+    width: 225px;
+    margin: 0 auto 0 57px;
+}
+
+.archives{
+    height: 458px;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+}
+
+.innner-search{
+    padding: 35px 0 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.search-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #FCA60E;
+}
+
+.narrow-by-post{
+    margin: 32px auto;
+}
+
+.narrow-by-post p{
+    font-weight: 700;
+}
+
+.filter {
+  width: 160px;
+  height: 35px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+}
+
+.filter-input {
+  position: relative;
+  width: 160px;
+  height: 100%;
+  padding: 0 15px; 
+  box-sizing: border-box;
+  box-shadow: 0px 3px 6px #00000029;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  margin: 0 auto
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.select-label {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.select-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 10px 0 10px;
+  border-color: black transparent transparent transparent;
+  margin-left: 5px;
+}
+
+.modal {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  max-height: 70px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: none;
+}
+
+.modal-item {
+  font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.modal-item:hover {
+  background-color: #f2f2f2;
+}
+
+.select:focus + .modal {
+  display: block;
+}
+
+.border{
+    width: calc(70%);
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.narrow-by-keyword{
+    margin: 32px auto;
+}
+
+.narrow-by-keyword p{
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.search-box {
+    width: 160px;
+    height: 35px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+}
+
+.keyword-input {
+    position: relative;
+    width: 160px;
+    height: 100%;
+    padding: 0 15px; 
+    box-sizing: border-box;
+    box-shadow: 0px 3px 6px #00000029;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    margin: 0 auto;
+}
+
+.search-category{
+    margin-top: 30px;
+    height: 260px;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+}
+
+.category-link-box{
+    margin: 30px auto;
+    display: flex;
+    flex-flow: column;
+    gap: 30px   ;
+}
+
+.feature-company{
+    height: 425px;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.company-link-box{
+    width: 154px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto 0;
+}
+
+.company-link{
+    display: flex;
+    height: 41px;
+    margin-top: 23px;
+}
+
+.gray-circle{
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    background-color: #CECECE;
+}
+
+.company-info{
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    justify-content: center;
+    padding-left: 17px;
+}
+
+.company-name{
+
+}
+
+.recruit-job{
+    font-size: 14px;
+}
+
+.special-article{
+    margin-top: 30px;
+    height: 769px;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+}
+
+.special-article-link-box{
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+}
+
+.special-article-link{
+    width: 160px;
+    height: 140px;
+    margin-top: 25px;
+    background-color: white;
+}
+
+.special-article-link img{
+    width: 160px;
+    height: 90px;
+    margin: 0;
+}
+
+.special-article-link-text{
+    padding: 2px 15.5px;
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    margin: 0;
+}
+
+.special-article-title{
+    font-weight: 700;
+    height: 18px;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+
+.pagination a {
+    color: #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+  
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+/* tablet対応 */
+@media screen and (min-width: 768px) and (max-width: 920px) {
+#article-main{
+width: 100%;
+justify-content: space-between;
+padding-bottom: 140px;
+}
+
+.article-grid{
+    width: calc(100% - 225px);
+}
+
+.article-link-div{
+    width: 100%;
+    height: 354.9px;
+}
+
+.article-box{
+    width: 100%;
+}
+
+div.article-link-div img{
+    width: 100%;
+}
+
+.sem-discription-article{
+    height: 94.41px;
+    border-left: #FCA60E 7px solid;
+}
+
+.row-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 47px 0 0 ;
+}
+
+.row-top{
+    padding-top: 0;
+}
+
+.search{
+    margin-left: 0;
+}
+}
+
+/* SP版対応 */
+@media screen and (max-width: 768px){
+
+#article-main{
+    flex-flow: column;
+}
+
+.row-article{
+    flex-flow: column;
+    padding-top: 0px;
+}
+
+.row-top{
+    padding-top: 0;
+}
+
+.article-link-div{
+    width: 290px;
+    height: 130px;
+    margin-bottom: 25px;
+}
+
+.article-top{
+    width: 290px;
+    height: 130px;
+    margin-bottom: 25px;
+}
+
+.img-seminertitle{
+    padding: 11.5px 17px 0 0 ;
+    display: flex;
+}
+
+div.img-seminertitle img{
+    width: 103.04px;
+    height: 57px;
+}
+.sem-discription-article{
+    height: 40px;
+}
+
+.pagination {
+    margin: 80px 0 140px;
+}
+
+.search{
+    margin: 0 auto 140px;
+    width: 300px;
+}
+}
